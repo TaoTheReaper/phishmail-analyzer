@@ -1,0 +1,36 @@
+From: PayPal Security <security@paypal.com.suspicious-domain.ru>
+To: victim@example.com
+Reply-To: reply-here@attacker-domain.xyz
+Subject: [URGENT] Your PayPal account has been limited
+Date: Tue, 29 Apr 2026 08:15:00 +0000
+Message-ID: <fake123@suspicious-domain.ru>
+X-Mailer: PhishKit/2.0
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary_main"
+
+--boundary_main
+Content-Type: text/html; charset=UTF-8
+
+<html>
+<body>
+<p>Dear Customer,</p>
+<p>We have detected unusual activity on your PayPal account. Your account will be suspended within 24 hours unless you verify your identity immediately.</p>
+<p>Urgent action required: Click here to login and confirm your account:</p>
+<a href="http://paypal-secure-login.attacker-domain.xyz/verify?token=abc123">http://paypal-secure-login.attacker-domain.xyz/verify</a>
+<p>You may also be redirected to:</p>
+<a href="http://185.220.101.45/steal.php">Click here</a>
+<p>If you have questions contact us at support@paypal-help.attacker-domain.xyz</p>
+<p>Limited time offer: update your payment info now to avoid suspension.</p>
+<img src="http://track.attacker-domain.xyz/pixel.gif?uid=victim123">
+</body>
+</html>
+
+--boundary_main
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="PayPal_Invoice_April2026.exe"
+Content-Transfer-Encoding: base64
+
+TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAA4AAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9T
+
+--boundary_main--

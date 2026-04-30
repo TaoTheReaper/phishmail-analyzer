@@ -1,0 +1,19 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Syntax check
+        run: |
+          find . -name "*.py" -not -path "./.venv/*" | xargs python -m py_compile && echo "All files OK"
+      - name: Lint with flake8
+        run: |
+          pip install flake8 -q
+          find . -name "*.py" -not -path "./.venv/*" | xargs flake8 --max-line-length=120 --ignore=E501,W503 || true
